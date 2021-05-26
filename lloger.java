@@ -20,10 +20,9 @@ public class Lloguer {
 	
 	public Vehicle getVehicle() { return vehicle; }
     
-	public double quantitat_per_lloguer() {
+	public double quantitat() {
     	double quantitat = 0;
         switch (this.getVehicle().getCategoria()) {
-            
             case Vehicle.GENERAL:
                 quantitat += 4;
                 if (this.getDies() > 2) {
