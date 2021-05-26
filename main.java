@@ -24,10 +24,10 @@ public static void main(String[] args) throws ParseException {
 		c.afegeix(lloguer1);
 		c.afegeix(lloguer2);
 		c.afegeix(lloguer3);
-		//System.out.print(c.informe());
+/*		System.out.print(c.informe()); */  
 		System.out.print(GestorLloguersLite(c));
-	}
 	
 	public static String GestorLloguersLite(Client c) {
 		return c.informe(); 
 	}
+}

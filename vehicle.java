@@ -1,5 +1,3 @@
-package refactoring
-
 import java.util.Vector;
 
 public class Vehicle {
