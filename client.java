@@ -1,3 +1,5 @@
+package refactoring
+
 import java.util.Vector;
 
 public class Client {
@@ -113,6 +115,30 @@ public class Client {
                     quantitat += lloguer.getDies() * 6;
                     break;
             }
+                    	//METODES
+            bonificacions += bonificacionsDeLloguer(lloguer);
+        	
+        	bonificacions += lloguer.bonificacions();
+            resultat += "\t" + lloguer.getVehicle().getMarca() + " " + lloguer.getVehicle().getModel() + ": " + (lloguer.quantitat() * 30) + "€" + "\n"; 
+            total += lloguer.quantitat() * 30;
+        }
+        resultat += "Import a pagar: " + importeTotal() + "€\n" + "Punts guanyats: " + bonificacionsTotal() + "\n";
+        return resultat;
+        
+		public double importeTotal() {
+    	double total = 0;
+    	for (Lloguer lloguer: lloguers) {
+    		total += lloguer.quantitat() * 30;
+    	}
+    	return total;
+    }
+    public int bonificacionsTotal() {
+    	int bonificacions = 0;
+    	for (Lloguer lloguer: lloguers) {
+    		bonificacions += lloguer.bonificacions();
+    	}
+    	return bonificacions;
+	}
         return null;
     }
 }

@@ -6,7 +6,10 @@ public class Vehicle {
     private String model;
     private String marca;
     private String categoria;
-
+	public static final String BASIC = "BASIC";
+    public static final String GENERAL = "GENERAL";
+    public static final String LUXE = "LUXE";
+    
     public Vehicle(String model, String marca, String categoria) {
         this.model = model;
         this.marca = marca;
