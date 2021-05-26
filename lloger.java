@@ -1,4 +1,4 @@
-package refactoring
+package refactoring;
 
 import java.util.Vector;
 
@@ -17,4 +17,28 @@ public class Lloguer {
 
     public void setData(String data) { this.data = data; }
     public void setDies(int dies) { this.dies = dies; }
+	
+	public Vehicle getVehicle() { return vehicle; }
+    
+	public double quantitat_per_lloguer() {
+    	double quantitat = 0;
+        switch (this.getVehicle().getCategoria()) {
+            
+            case Vehicle.GENERAL:
+                quantitat += 4;
+                if (this.getDies() > 2) {
+                    quantitat += (this.getDies() - 2) * 2.5;
+                }
+            case Vehicle.BASIC:
+                quantitat += 3;
+                if (this.getDies() > 3) {
+                    quantitat += (this.getDies() - 3) * 1.5;
+                }
+                break;
+            case Vehicle.LUXE:
+                quantitat += this.getDies() * 6;
+                break;
+        }
+		return quantitat;
+    }
 }
